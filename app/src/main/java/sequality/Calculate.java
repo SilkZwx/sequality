@@ -7,4 +7,8 @@ public class Calculate {
   public int sum(int x, int y) {
     return x + y;
   }
+
+  public float avg(int x, int y) {
+    return (float) x / y;
+  }
 }

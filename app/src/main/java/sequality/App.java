@@ -9,6 +9,27 @@ public class App {
   }
 
   public static void main(String[] args) {
+    Calculate cal = new Calculate();
     System.out.println(new App().getGreeting());
+    int sum = cal.sum(2, 3);
+    float avg = cal.avg(sum, 2);
+    System.out.printf("Sum of 2 and 3 is %d. Average is %.1f.\n", sum, avg);
+    sum = 0;
+    int cnt = 0;
+    for (int i = 1; i < 11; i++) {
+      sum = cal.sum(sum, i);
+      cnt++;
+    }
+    avg = cal.avg(sum, cnt);
+    System.out.printf("Sum of 1 to 10 is %d. Average is %.1f.\n", sum, avg);
+    int odd = 0, even = 0;
+    for (int i = 1; i < 11; i++) {
+      if (i % 2 != 0) {
+        odd = cal.sum(odd, i);
+      } else {
+        even = cal.sum(even, i);
+      }
+    }
+    System.out.printf("Sum of odd 1 to 10 is %d. Sum of even is %d.\n", odd, even);
   }
 }
